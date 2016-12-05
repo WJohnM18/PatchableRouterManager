@@ -16,6 +16,7 @@ public class PatchableRouterDisplayer {
 	
 	private IRouterManager routerManager;
 	private UserInterface UI;
+	
 	private Set<IRouter> patchableRouters;
 	
 	public PatchableRouterDisplayer(UserInterface UI, String csvSourcePath){

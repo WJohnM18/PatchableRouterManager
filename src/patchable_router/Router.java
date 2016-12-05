@@ -49,6 +49,11 @@ public class Router implements IRouter{
 	public void setOSVersion(double osVersion) {
 		this.osVersion = osVersion;
 	}
+	
+	@Override
+	public void setNote(String note){
+		this.note = note;
+	}
 
 	/***
 	 * @modifies: this

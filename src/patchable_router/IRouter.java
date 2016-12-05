@@ -17,6 +17,8 @@ public interface IRouter {
 	
 	public void setOSVersion(double osVersion);
 	
+	public void setNote(String note);
+	
 	/***
 	 * @modifies: this
 	 * @effects:  Adds the note passed as an argument to the current note held  
