@@ -1,5 +1,7 @@
 package patchable_router;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.nio.file.InvalidPathException;
 import java.util.Set;
 
@@ -48,7 +50,7 @@ public class PatchableRouterDisplayer {
 		else{
 		    String routerInfo = "";
 		    for(IRouter router: patchableRouters){
-			
+		   
 			    routerInfo = router.getHostname() + "   (" + router.getIPAddress() + ")   " 
 					         + "OS version " + router.getOSVersion();
 			    
@@ -74,7 +76,7 @@ public class PatchableRouterDisplayer {
 		    this.patchableRouters = this.routerManager.getPatchableRouters();
 		    return true;
 		}
-		catch(InvalidPathException e){
+		catch(FileNotFoundException e){
 			return false;
 		}
 	}

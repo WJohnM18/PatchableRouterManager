@@ -12,11 +12,11 @@ public class Router implements IRouter{
 	private String hostname;
 	private String ipAddress;
 	private boolean patched;
-	private double osVersion;
+	private String osVersion;
 	private String note;
 	
 
-	public Router(String hostname, String ipAddress, boolean patched, double osVersion, String note) {
+	public Router(String hostname, String ipAddress, boolean patched, String osVersion, String note) {
 	    
 	    this.hostname = hostname;
 	    this.ipAddress = ipAddress;
@@ -25,7 +25,7 @@ public class Router implements IRouter{
 	    this.note = note;
 	}
 	
-	public Router(String hostname, String ipAddress, boolean patched, double osVersion){ 
+	public Router(String hostname, String ipAddress, boolean patched, String osVersion){ 
 	    this(hostname, ipAddress, patched, osVersion, "");
 	}
 
@@ -46,7 +46,7 @@ public class Router implements IRouter{
 	}
 
 	@Override
-	public void setOSVersion(double osVersion) {
+	public void setOSVersion(String osVersion) {
 		this.osVersion = osVersion;
 	}
 	
@@ -95,7 +95,7 @@ public class Router implements IRouter{
 	}
 
 	@Override
-	public double getOSVersion() {
+	public String getOSVersion() {
 		
 		return this.osVersion;
 	}

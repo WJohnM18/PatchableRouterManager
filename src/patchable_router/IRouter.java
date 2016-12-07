@@ -15,7 +15,7 @@ public interface IRouter {
 	
 	public void setPatched(boolean patched);
 	
-	public void setOSVersion(double osVersion);
+	public void setOSVersion(String osVersion);
 	
 	public void setNote(String note);
 	
@@ -39,7 +39,7 @@ public interface IRouter {
 	
 	public boolean isPatched();
 	
-	public double getOSVersion();
+	public String getOSVersion();
 	
 	public String getNote();
 	

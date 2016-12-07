@@ -23,33 +23,33 @@ public class RouterTests {
 
 	@Test
 	public void testRouterConstructor(){
-		new Router("a.example.com", "1.1.1.1", false, 12.5, "testnote");
+		new Router("a.example.com", "1.1.1.1", false, "12.5", "testnote");
 	}
 	
 	@Test
 	public void testGetHostname(){
 		String hostname = "a.example.com";
-		IRouter router = new Router(hostname, "1.1.1.1", false, 12.5, "testnote");
+		IRouter router = new Router(hostname, "1.1.1.1", false, "12.5", "testnote");
 		assertEquals(router.getHostname(), hostname);
 	}
 	
 	@Test
 	public void testGetIPAddress(){
 		String ipAddress = "1.1.1.1";
-		IRouter router = new Router("a.example.com", ipAddress, false, 12.5, "testnote");
+		IRouter router = new Router("a.example.com", ipAddress, false, "12.5", "testnote");
 	    assertEquals(router.getIPAddress(), ipAddress);
 	}
 	
 	@Test
 	public void testIsPatched(){
 		boolean patched = false;
-		IRouter router = new Router("a.example.com", "1.1.1.1", patched, 12.5, "testnote");
+		IRouter router = new Router("a.example.com", "1.1.1.1", patched, "12.5", "testnote");
 		assertEquals(router.isPatched(), patched);
 	}
 	
 	@Test
 	public void testGetOSVersion(){
-		double OSVersion = 12.200;
+		String OSVersion = "12.200";
 		IRouter router = new Router("a.example.com", "1.1.1.1", false, OSVersion, "testnote");
 		assertTrue(router.getOSVersion() == OSVersion);
 	}
@@ -57,14 +57,14 @@ public class RouterTests {
 	@Test
 	public void testGetNote(){
 		String note = "testnote";
-		IRouter router = new Router("a.example.com", "1.1.1.1", false, 12.5, note);
+		IRouter router = new Router("a.example.com", "1.1.1.1", false, "12.5", note);
 		assertEquals(router.getNote(), note);
 	}
 	
 	@Test
 	public void testAddNote(){
 		String note = "testnote";
-		IRouter router = new Router("a.example.com", "1.1.1.1", false, 12.5, note);
+		IRouter router = new Router("a.example.com", "1.1.1.1", false, "12.5", note);
 		
 		String noteAddOn = "add this to note";
 		
@@ -76,7 +76,7 @@ public class RouterTests {
 	@Test
 	public void testSetHostname(){
 		String hostname = "a.example.com";
-		IRouter router = new Router(hostname, "1.1.1.1", false, 12.5, "testnote");
+		IRouter router = new Router(hostname, "1.1.1.1", false, "12.5", "testnote");
 		
 		String newHostname = "some new hostname";
 		router.setHostname(newHostname);
@@ -87,7 +87,7 @@ public class RouterTests {
 	@Test
 	public void testSetIPAddress(){
 		String ipAddress = "1.1.1.1";
-		IRouter router = new Router("a.example.com", ipAddress, false, 12.5, "testnote");
+		IRouter router = new Router("a.example.com", ipAddress, false, "12.5", "testnote");
 		
 		String newIPAddress = "127.0.0.1";
 		router.setIPAddress(newIPAddress);
@@ -98,7 +98,7 @@ public class RouterTests {
 	@Test
 	public void testSetPatched(){
 		boolean patched = false;
-		IRouter router = new Router("a.example.com", "1.1.1.1", patched, 12.5, "testnote");
+		IRouter router = new Router("a.example.com", "1.1.1.1", patched, "12.5", "testnote");
 		
 		boolean newPatched = true;
 		router.setPatched(newPatched);
@@ -108,19 +108,19 @@ public class RouterTests {
 	
 	@Test
 	public void testSetOSVersion(){
-		double osVersion = 12.000;
+		String osVersion = "12.000";
 		IRouter router = new Router("a.example.com", "1.1.1.1", false, osVersion, "testnote");
 		
-		double newOSVersion = 45.678;
+		String newOSVersion = "45.678";
 		router.setOSVersion(newOSVersion);
 		
-	    assertTrue(router.getOSVersion() == newOSVersion);
+	    assertTrue(router.getOSVersion().equals(newOSVersion));
 	}
 	
 	@Test
 	public void testSetNote(){
 		String note = "original note";
-		IRouter router = new Router("a.example.com", "1.1.1.1", false, 12.5, note);
+		IRouter router = new Router("a.example.com", "1.1.1.1", false, "12.5", note);
 		
 		String newNote = "this is my new note";
 		router.setNote(newNote);
@@ -131,7 +131,7 @@ public class RouterTests {
 	@Test
 	public void testClearNote(){
 		String note = "original note";
-		IRouter router = new Router("a.example.com", "1.1.1.1", false, 12.5, note);
+		IRouter router = new Router("a.example.com", "1.1.1.1", false, "12.5", note);
 		
 		router.clearNote();
 		
@@ -141,7 +141,7 @@ public class RouterTests {
 	@Test
 	public void testAddNoteAfterClearNote(){
 		String note = "original note";
-		IRouter router = new Router("a.example.com", "1.1.1.1", false, 12.5, note);
+		IRouter router = new Router("a.example.com", "1.1.1.1", false, "12.5", note);
 		
 		String noteToAdd = "note to add";
 		router.clearNote();
@@ -152,8 +152,8 @@ public class RouterTests {
 	
 	@Test
 	public void testInequalRouters(){
-		IRouter routerOne = new Router("a.example.com", "1.1.1.1", false, 12.5, "");
-		IRouter routerTwo = new Router("b.example.com", "1.1.1.4", true, 7, "");
+		IRouter routerOne = new Router("a.example.com", "1.1.1.1", false, "12.5", "");
+		IRouter routerTwo = new Router("b.example.com", "1.1.1.4", true, "7", "");
 		
 		assertFalse(routerOne.equals(routerTwo));
 	}
