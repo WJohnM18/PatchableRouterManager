@@ -150,4 +150,13 @@ public class RouterTests {
 	    assertEquals(router.getNote(), noteToAdd);
 	}
 	
+	@Test
+	public void testInequalRouters(){
+		IRouter routerOne = new Router("a.example.com", "1.1.1.1", false, 12.5, "");
+		IRouter routerTwo = new Router("b.example.com", "1.1.1.4", true, 7, "");
+		
+		assertFalse(routerOne.equals(routerTwo));
+	}
+	
+	
 }
