@@ -1,10 +1,11 @@
 Router Patch Check Description
 ==============================
 
-To run the route patch code, execute: 
+HOW TO RUN:
 
-'javac Main.java'
+    - Navigate to src/ folder
+    - Compile Main.java by running the command:
+                      'javac Main.java'
 
-followed by:
-
-'java Main sample.csv'
+    - Execute by running the command:
+                      'java Main.java <path of the csv file>'
