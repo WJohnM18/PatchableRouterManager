@@ -25,11 +25,6 @@ public class Router implements IRouter{
 	    this.note = note;
 	}
 	
-	public Router(String hostname, String ipAddress, boolean patched, String osVersion){ 
-	    this(hostname, ipAddress, patched, osVersion, "");
-	}
-
-	
 	@Override
 	public void setHostname(String hostname) {
 		this.hostname = hostname;
