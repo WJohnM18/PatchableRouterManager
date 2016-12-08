@@ -1,8 +1,7 @@
 Patchable Router Manager Description
 ==============================
 
-Project Description:
-    A Command Line application that will take in a CSV file of router data and
+	A Command Line application that will take in a CSV file of router data and
     display the routers that can be patched, which is determined by the 
     following criteria:
 
